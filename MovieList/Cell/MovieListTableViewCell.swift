@@ -21,7 +21,7 @@ class MovieListTableViewCell: UITableViewCell {
         return customImage
     }()
 
-   public let titleLabel : UILabel = {
+    public let titleLabel : UILabel = {
         let label = UILabel()
         label.text = "Title"
         label.font = UIFont.boldSystemFont(ofSize: 16)
@@ -54,10 +54,15 @@ class MovieListTableViewCell: UITableViewCell {
         return label
     }()
 
+    private var verticalStackView: UIStackView!
+    private var horizontalStackView: UIStackView!
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = .blue
-        self.setupViews()
+        backgroundColor = .darkGray
+
+        setupVStackView()
+        setupLayoutViews()
     }
 
     required init?(coder: NSCoder) {
@@ -66,11 +71,57 @@ class MovieListTableViewCell: UITableViewCell {
 }
 
 extension MovieListTableViewCell {
-    func setupViews(){
-        self.addSubview(customImageView)
+
+    func setup() {
+        self.addSubview(self.customImageView)
+
         customImageView.snp.makeConstraints { make in
             make.top.left.equalTo(20)
             make.right.bottom.equalTo(-20)
+        }
+    }
+
+    func setupVStackView(){
+        self.verticalStackView = UIStackView(arrangedSubviews: [titleLabel, yearLabel, typeLabel, imdbLabel])
+        self.verticalStackView.axis = .vertical
+        self.verticalStackView.spacing = 4
+        self.verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.verticalStackView.layer.borderColor = UIColor.lightGray.cgColor
+        self.verticalStackView.layer.borderWidth = 1.0
+        self.verticalStackView.layer.cornerRadius = 12
+    }
+
+
+    func setupLayoutViews(){
+        self.horizontalStackView = UIStackView()
+        self.horizontalStackView.axis = .vertical
+        self.horizontalStackView.spacing = 10
+
+        self.addSubview(self.horizontalStackView)
+
+        self.horizontalStackView.addArrangedSubview(self.customImageView)
+        self.horizontalStackView.addArrangedSubview(self.verticalStackView)
+
+        self.horizontalStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.trailing.equalToSuperview()
+        }
+
+        self.customImageView.snp.makeConstraints { make in
+            make.width.equalToSuperview().multipliedBy(0.3)
+            make.height.equalTo(80)
+            make.top.equalTo(10)
+            make.bottom.equalTo(10)
+        }
+
+        self.verticalStackView.snp.makeConstraints { make in
+            make.leading.equalTo(self.customImageView.snp.trailing).offset(20)
+            make.top.equalTo(10)
+            make.trailing.equalTo(10)
+            make.bottom.equalTo(10)
         }
     }
 }

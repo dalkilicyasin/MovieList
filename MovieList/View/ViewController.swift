@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 
     lazy var tableView : UITableView = {
         let tableview = UITableView(frame: .zero, style: .plain)
+        tableview.rowHeight = 100
         view.addSubview(tableview)
         tableview.snp.makeConstraints { make in
             make.edges.equalToSuperview()
