@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - HomeViewModel Delegate
 protocol MovieListViewModelDelegate: AnyObject {
-    func gamesListDownloadFinished()
+    func moviesListDownloadFinished()
 }
 
 // MARK: - HomeViewModel Protocol
@@ -42,13 +42,9 @@ extension MovieListViewModel : MovieListViewModelProtocol {
             case .success(let movies):
                 self.allMovies = movies.Search ?? []
                 DispatchQueue.main.async {
-                    self.delegate?.gamesListDownloadFinished()
+                    self.delegate?.moviesListDownloadFinished()
                 }
 
-               // for i in 0...(self.allMovies.count) - 1 {
-               //     downloadImage(imageUrl: self.allMovies[i].Poster ?? "")
-               // }
-               //
             case .failure(let error):
                 print("FetchGames Error: \(error)")
             }
@@ -61,16 +57,25 @@ extension MovieListViewModel : MovieListViewModelProtocol {
                 if let data = data {
                     DispatchQueue.main.async {
                             self?.imageView.image = UIImage.init(data: data)
-                            self?.delegate?.gamesListDownloadFinished()
-                            //self?.images.append(self?.imageView ?? UIImageView())
-                       // if self?.allMovies.count == self?.images.count {
-                       //     for i in 0...(self?.allMovies.count ?? 0) - 1 {
-                       //         self?.allMovies[i].imageData = self?.images[i].image
-                       //     }
-                       //     self?.delegate?.gamesListDownloadFinished()
-                       // }
+                            self?.delegate?.moviesListDownloadFinished()
                     }
                 }
+            }
+        }
+    }
+
+    func searchMoview(searchText : String?){
+        service.searcMoview(searchText: searchText) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let movies):
+                self.allMovies = movies.Search ?? []
+                DispatchQueue.main.async {
+                    self.delegate?.moviesListDownloadFinished()
+                }
+
+            case .failure(let error):
+                print("FetchGames Error: \(error)")
             }
         }
     }
