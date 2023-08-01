@@ -24,7 +24,9 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Title"
         label.font = UIFont.boldSystemFont(ofSize: 14)
-        label.textColor = .black
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .white
         return label
     }()
 
@@ -32,7 +34,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Year"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
 
@@ -40,7 +42,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Type"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
 
@@ -48,7 +50,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Imdb"
         label.font = UIFont.systemFont(ofSize: 12)
-        label.textColor = .black
+        label.textColor = .white
         return label
     }()
 
@@ -57,7 +59,7 @@ class MovieListCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .darkGray
+        contentView.backgroundColor = .black
         setupVStackView()
         setupLayoutViews()
     }
@@ -72,7 +74,7 @@ extension MovieListCollectionViewCell {
     func setupVStackView(){
         self.verticalStackView = UIStackView(arrangedSubviews: [titleLabel, yearLabel, typeLabel, imdbLabel])
         self.verticalStackView.axis = .vertical
-        self.verticalStackView.spacing = 20
+        self.verticalStackView.spacing = 10
     }
 
     func setupLayoutViews(){
@@ -87,8 +89,8 @@ extension MovieListCollectionViewCell {
 
         self.horizontalStackView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(16)
-            make.leading.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview().inset(16)
+            make.leading.equalToSuperview()
+            make.bottom.equalToSuperview()
             make.trailing.equalToSuperview().inset(16)
         }
 
@@ -100,9 +102,9 @@ extension MovieListCollectionViewCell {
         }
 
         self.verticalStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview().inset(16)
-            make.trailing.equalToSuperview().inset(16)
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview().inset(30)
+            make.trailing.equalToSuperview()
         }
     }
 }

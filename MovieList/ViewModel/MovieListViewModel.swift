@@ -13,17 +13,11 @@ protocol MovieListViewModelDelegate: AnyObject {
     func moviesListDownloadFinished()
 }
 
-// MARK: - HomeViewModel Protocol
-protocol MovieListViewModelProtocol: AnyObject {
-    var allMovies: [Movies] { get set }
-    var delegate: MovieListViewModelDelegate? { get set }
-}
 // MARK: - MovieListViewModel Class
 final class MovieListViewModel {
     var allMovies: [Movies] = []
-    var images : [UIImageView] = []
+    var comedyMovies : [Movies] = []
     var imageView = UIImageView()
-    var imageUrl = ""
     var service : MovieServiceProtocol
     
     weak var delegate: MovieListViewModelDelegate?
@@ -34,38 +28,26 @@ final class MovieListViewModel {
 }
 
 //MARK: - Fetch Movies Call
-extension MovieListViewModel : MovieListViewModelProtocol {
+extension MovieListViewModel  {
     func fetchMovies() {
         service.fetchMovies() { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let movies):
-                self.allMovies = movies.Search ?? []
+                self.comedyMovies = movies.Search ?? []
                 DispatchQueue.main.async {
+                    
                     self.delegate?.moviesListDownloadFinished()
                 }
 
             case .failure(let error):
-                print("FetchGames Error: \(error)")
+                print("FetchMovies Error: \(error)")
             }
         }
     }
-
-    func downloadImage(imageUrl : String){
-        if imageUrl != "" {
-            service.downloadImage(from: URL.init(string: imageUrl)!) { [weak self] (data, response, error) in
-                if let data = data {
-                    DispatchQueue.main.async {
-                            self?.imageView.image = UIImage.init(data: data)
-                            self?.delegate?.moviesListDownloadFinished()
-                    }
-                }
-            }
-        }
-    }
-
-    func searchMoview(searchText : String?){
-        service.searcMoview(searchText: searchText) { [weak self] result in
+    
+    func searchMovies(searchText : String?){
+        service.searchMovies(searchText: searchText) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let movies):
@@ -75,7 +57,7 @@ extension MovieListViewModel : MovieListViewModelProtocol {
                 }
 
             case .failure(let error):
-                print("FetchGames Error: \(error)")
+                print("FetchMovies Error: \(error)")
             }
         }
     }

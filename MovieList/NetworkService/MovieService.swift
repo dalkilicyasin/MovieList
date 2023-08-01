@@ -16,15 +16,15 @@ enum Constants: String {
 // MARK: Protocol
 public protocol MovieServiceProtocol: AnyObject {
     func fetchMovies(completion: @escaping (Result<MovieList, Error>) -> Void)
-    func fetchMovieDetails(with id: Int, completion: @escaping (Result<MovieDetail, Error>) -> Void)
+    func fetchMovieDetails(with imdbId: String, completion: @escaping (Result<MovieDetail, Error>) -> Void)
     func downloadImage(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ())
-    func searcMoview(searchText : String?, completion: @escaping (Result<MovieList, Error>) -> Void)
+    func searchMovies(searchText : String?, completion: @escaping (Result<MovieList, Error>) -> Void)
 }
 
 public class MovieService: MovieServiceProtocol {
 
     // MARK: Searcg Movies
-    public func searcMoview(searchText: String?, completion: @escaping (Result<MovieList, Error>) -> Void) {
+    public func searchMovies(searchText: String?, completion: @escaping (Result<MovieList, Error>) -> Void) {
         let urlString = Constants.baseURL.rawValue + "/?s=\(searchText ?? "")&apikey=" + Constants.APIKey.rawValue
 
         guard let url = URL(string: urlString) else {
@@ -105,8 +105,8 @@ public class MovieService: MovieServiceProtocol {
     }
 
     // MARK: Fetch Movie Details
-    public func fetchMovieDetails(with id: Int, completion: @escaping (Result<MovieDetail, Error>) -> Void) {
-        let urlString = Constants.baseURL.rawValue + "/api/games/\(id)?key=" + Constants.APIKey.rawValue
+    public func fetchMovieDetails(with imdbId: String, completion: @escaping (Result<MovieDetail, Error>) -> Void) {
+        let urlString = Constants.baseURL.rawValue + "/?i=\(imdbId)&apikey=" + Constants.APIKey.rawValue
 
         guard let url = URL(string: urlString) else {
             print("Invalid URL")

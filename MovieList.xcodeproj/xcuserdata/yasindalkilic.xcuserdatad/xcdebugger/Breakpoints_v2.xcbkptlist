@@ -149,47 +149,110 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "10A51ED4-8E42-4F5C-9CFE-5B03A76733A3"
-            shouldBeEnabled = "Yes"
+            uuid = "DB64AE73-CA1D-4EAD-9F43-EDF8C6826A4A"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MovieList/ViewModel/MovieListViewModel.swift"
+            filePath = "MovieList/ViewModel/MovieListDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "searchMoview(searchText:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "fetchMoviewDetail(imdbId:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "10A51ED4-8E42-4F5C-9CFE-5B03A76733A3 - 663d3b99bd219bd9"
+                  uuid = "DB64AE73-CA1D-4EAD-9F43-EDF8C6826A4A - 941b4821444fe1c9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieList.MovieList, Swift.Error&gt;) -&gt; () in MovieList.MovieListViewModel.searchMoview(searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "MovieList.MovieListDetailViewModel.fetchMoviewDetail(imdbId: Swift.String) -&gt; ()"
                   moduleName = "MovieList"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewModel/MovieListViewModel.swift"
+                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewModel/MovieListDetailViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "320">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "56">
                </Location>
                <Location
-                  uuid = "10A51ED4-8E42-4F5C-9CFE-5B03A76733A3 - 663d3b99bd219bd9"
+                  uuid = "DB64AE73-CA1D-4EAD-9F43-EDF8C6826A4A - 13e68d5e814a749b"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;MovieList.MovieList, Swift.Error&gt;) -&gt; () in MovieList.MovieListViewModel.searchMoview(searchText: Swift.Optional&lt;Swift.String&gt;) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieList.MovieDetail, Swift.Error&gt;) -&gt; () in MovieList.MovieListDetailViewModel.fetchMoviewDetail(imdbId: Swift.String) -&gt; ()"
                   moduleName = "MovieList"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewModel/MovieListViewModel.swift"
+                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewModel/MovieListDetailViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "360">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "DB64AE73-CA1D-4EAD-9F43-EDF8C6826A4A - 13e68d5e814a749b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;MovieList.MovieDetail, Swift.Error&gt;) -&gt; () in MovieList.MovieListDetailViewModel.fetchMoviewDetail(imdbId: Swift.String) -&gt; ()"
+                  moduleName = "MovieList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewModel/MovieListDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "376">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1B4F4DA-4531-49E0-ADC9-A5E43D4F1B3E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieList/ViewController/DetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "moviesListDownloadFinished()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E1B4F4DA-4531-49E0-ADC9-A5E43D4F1B3E - d1d8ba3ac3d86e5c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieList.DetailViewController.moviesListDownloadFinished() -&gt; ()"
+                  moduleName = "MovieList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewController/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "E1B4F4DA-4531-49E0-ADC9-A5E43D4F1B3E - d1d8ba3ac3d868af"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieList.DetailViewController.moviesListDownloadFinished() -&gt; ()"
+                  moduleName = "MovieList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yasindalkilic/Desktop/MovieList/MovieList/ViewController/DetailViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "142"
+                  endingLineNumber = "142"
+                  offsetFromSymbolStart = "124">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -8,8 +8,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Models
-
+// MARK: - Movies Model
 public struct Movies: Decodable {
     public let Title: String?
     public let Year: String?
@@ -36,25 +35,26 @@ public struct Movies: Decodable {
     }
 }
 
-
-
+// MARK: - MovieDetail Model
 public struct MovieDetail: Decodable {
-    public let name: String?
-    public let released: String?
-    public let backgroundImage:String?
-    public let id: Int32?
-    public let rating: Double?
-    public let metacritic: Int?
-    public let description: String?
-
-    enum CodingKeys: String,CodingKey {
-        case name
-        case released
-        case backgroundImage = "background_image"
-        case id
-        case rating
-        case metacritic
-        case description = "description_raw"
-    }
+    public let Title: String?
+    public let Year: String?
+    public let Rated:String?
+    public let Released: String?
+    public let Runtime: String?
+    public let Genre: String?
+    public let Director: String?
+    public let Writer: String?
+    public let Actors: String?
+    public let Plot:String?
+    public let Language: String?
+    public let Country: String?
+    public let Awards: String?
+    public let Poster: String?
+    public let Metascore: String?
+    public let imdbRating: String?
+    public let imdbVotes: String?
+    public let DVD: String?
+    public let BoxOffice: String?
 }
 
