@@ -130,9 +130,9 @@
 		D9C5A3972A740A5E006CDE21 /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
-				D9C5E9A82A76B50500A8700D /* Extensions */,
 				D9C5A3982A740A5E006CDE21 /* AppDelegate.swift */,
 				D9C5A39A2A740A5E006CDE21 /* SceneDelegate.swift */,
+				D9C5E9A82A76B50500A8700D /* Extensions */,
 				D9C5A3D52A74F28A006CDE21 /* Cell */,
 				D9C5E9A32A75769C00A8700D /* NetworkService */,
 				D9C5A3CA2A740C3C006CDE21 /* Model */,
