@@ -36,7 +36,6 @@ extension MovieListViewModel  {
             case .success(let movies):
                 self.comedyMovies = movies.Search ?? []
                 DispatchQueue.main.async {
-                    
                     self.delegate?.moviesListDownloadFinished()
                 }
 

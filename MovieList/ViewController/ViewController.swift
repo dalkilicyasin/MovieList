@@ -12,6 +12,7 @@ class ViewController: UIViewController, MovieListViewModelDelegate {
 
     func moviesListDownloadFinished() {
         tableView.reloadData()
+        collectionView.reloadData()
     }
 
     var viewModel : MovieListViewModel? {
